@@ -1,3 +1,6 @@
+/** Path to a file in public/, prefixed for wherever the site is hosted (e.g. /portfolio/ on GitHub Pages). */
+const asset = (path: string) => `${import.meta.env.BASE_URL}${path}`
+
 export const site = {
   name: 'Kebin Tong',
   role: 'Developer',
@@ -46,7 +49,7 @@ export const projects: Project[] = [
     subtitle: 'Rage platformer dressed up as a game show',
     summary:
       'A single-player 3D rage platformer built for Windows. Fake floors, fake save points, two bosses and a host who roasts every fall. Twelve troll stages, five graphics presets and full controller support.',
-    cover: '/screenshots/Out-of-context.png',
+    cover: asset('screenshots/Out-of-context.png'),
     coverPosition: '12% center',
     tint: '#22104a',
     year: '2026',
@@ -67,7 +70,7 @@ export const projects: Project[] = [
     subtitle: 'Face-check attendance for online classes',
     summary:
       'A desktop attendance app that checks who is actually in class. Students register once with a join code and a quick face check; the teacher’s app then marks them present during Google Meet, Zoom or Teams sessions.',
-    cover: '/screenshots/Presentia.png',
+    cover: asset('screenshots/Presentia.png'),
     coverPosition: '8% center',
     tint: '#f5f7fb',
     year: '2026',
@@ -88,7 +91,7 @@ export const projects: Project[] = [
     subtitle: 'Platform for Cebu university students',
     summary:
       'A free student platform for Cebu universities. Real-time private chats, a shared Knowledge Wall, random connections and instant file conversion — all in one place, with the files staying on the device.',
-    cover: '/screenshots/CUlink.png',
+    cover: asset('screenshots/CUlink.png'),
     coverPosition: 'left center',
     tint: '#efeff3',
     year: '2026',
@@ -108,7 +111,7 @@ export const projects: Project[] = [
     subtitle: 'Unity WebGL game published to GitHub Pages',
     summary:
       'A Unity WebGL game I published to GitHub Pages. The built player runs in the browser from the repo page; this card links the source and the published build.',
-    cover: '/screenshots/The-Gas-Station.png',
+    cover: asset('screenshots/The-Gas-Station.png'),
     coverPosition: '55% center',
     tint: '#2a2a2a',
     year: '2025',

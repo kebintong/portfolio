@@ -10,7 +10,7 @@ export function Footer() {
   return (
     <footer id="contact" className="mt-32 border-t border-line sm:mt-44">
       <div className="mx-auto max-w-[1400px] px-5 py-20 sm:px-8 sm:py-28">
-        <div className="grid gap-14 lg:grid-cols-[1.2fr_1fr] lg:gap-24">
+        <div className="grid grid-cols-[minmax(0,1fr)] gap-14 lg:grid-cols-[1.2fr_1fr] lg:gap-24">
           <div>
             <Lines as="h2" className="font-display text-[clamp(48px,8vw,120px)]" lines={['Get in touch']} />
             <Reveal delay={0.2} className="mt-8 flex flex-wrap items-center gap-x-8 gap-y-3">
@@ -28,7 +28,7 @@ export function Footer() {
 
           <Reveal delay={0.15}>
             <div className="flex h-full min-h-[320px] flex-col justify-center rounded-card bg-surface-2/60 p-8">
-              <p className="font-display text-[36px]">kxvxn124@gmail.com</p>
+              <p className="font-display text-[clamp(22px,7vw,36px)] [overflow-wrap:anywhere]">{site.email}</p>
               <p className="mt-2 text-[15px] text-muted">
                 Email me directly about a project, a collaboration, or just to say hi.
               </p>

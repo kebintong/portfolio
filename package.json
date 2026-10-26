@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "build:pages": "vite build --mode pages",
     "preview": "vite preview",
     "deploy": "vite build && wrangler deploy",
     "start": "node scripts/local-serve.mjs",
