@@ -10,21 +10,8 @@ export const site = {
   available: true,
   intro:
     'Developer building side projects and small tools, usually in JavaScript and sometimes in Python. I keep the source public and move on when something is good enough to be real.',
-  socials: [
-    { label: 'GitHub', href: 'https://github.com/kebintong' },
-  ],
-  marquee: [
-    'JavaScript',
-    'React',
-    'Node.js',
-    'Python',
-    'HTML',
-    'CSS',
-    'Git',
-    'GitHub',
-    'Side projects',
-    'Open source',
-  ],
+  socials: [{ label: 'GitHub', href: 'https://github.com/kebintong' }],
+  marquee: ['JavaScript', 'React', 'Node.js', 'Python', 'HTML', 'CSS', 'Git', 'GitHub', 'Side projects', 'Open source'],
 }
 
 export type Project = {

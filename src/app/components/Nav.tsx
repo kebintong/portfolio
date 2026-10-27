@@ -3,17 +3,7 @@ import { Link, NavLink, useLocation } from 'react-router'
 
 import { site } from '../../data/site'
 import { cx } from '../lib/cx'
-
-export function useLocalTime() {
-  const [time, setTime] = useState('')
-  useEffect(() => {
-    const tick = () => setTime(new Intl.DateTimeFormat('en-GB', { hour: '2-digit', minute: '2-digit', timeZone: site.timezone }).format(new Date()))
-    tick()
-    const id = window.setInterval(tick, 15_000)
-    return () => window.clearInterval(id)
-  }, [])
-  return time
-}
+import { useLocalTime } from '../lib/useLocalTime'
 
 export function Nav() {
   const time = useLocalTime()
@@ -35,7 +25,9 @@ export function Nav() {
     <NavLink
       key={to}
       to={to}
-      className={({ isActive }) => cx('link-draw text-[14px] transition-colors', isActive || (to !== '/' && location.pathname.startsWith(to)) ? 'text-fg' : 'text-muted hover:text-fg')}
+      className={({ isActive }) =>
+        cx('link-draw text-[14px] transition-colors', isActive || (to !== '/' && location.pathname.startsWith(to)) ? 'text-fg' : 'text-muted hover:text-fg')
+      }
     >
       {label}
     </NavLink>

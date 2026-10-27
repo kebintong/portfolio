@@ -63,9 +63,9 @@ export function Work() {
               >
                 <span className="flex items-center gap-2">
                   <>
-                  <ArrowUpRight className="shrink-0 size-4" />
-                  {link.label}
-                </>
+                    <ArrowUpRight className="shrink-0 size-4" />
+                    {link.label}
+                  </>
                 </span>
               </a>
             ))}
@@ -75,7 +75,9 @@ export function Work() {
         <div className="max-w-2xl">
           {project.body.map((paragraph, i) => (
             <Reveal key={i} delay={i * 0.05}>
-              <p className={`text-pretty leading-relaxed text-fg/90 ${i === 0 ? 'font-display text-[28px] leading-[1.2] sm:text-[36px]' : 'mt-6 text-[17px] text-muted'}`}>
+              <p
+                className={`text-pretty leading-relaxed text-fg/90 ${i === 0 ? 'font-display text-[28px] leading-[1.2] sm:text-[36px]' : 'mt-6 text-[17px] text-muted'}`}
+              >
                 {paragraph}
               </p>
             </Reveal>
@@ -99,9 +101,16 @@ export function Work() {
       <Link to={`/work/${next.slug}`} className="group mt-32 block border-t border-line pt-10">
         <p className="text-[14px] text-muted">Next project</p>
         <div className="mt-3 flex items-end justify-between gap-6">
-          <h2 className="font-display text-[clamp(44px,8vw,120px)] transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:translate-x-3">{next.title}</h2>
+          <h2 className="font-display text-[clamp(44px,8vw,120px)] transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:translate-x-3">
+            {next.title}
+          </h2>
           <span className="image-frame hidden aspect-[4/3] w-[260px] shrink-0 rounded-[20px] sm:block" style={{ background: next.tint }}>
-            <img src={next.cover} alt="" className="size-full object-cover transition-transform duration-700 group-hover:scale-105" style={{ objectPosition: next.coverPosition }} />
+            <img
+              src={next.cover}
+              alt=""
+              className="size-full object-cover transition-transform duration-700 group-hover:scale-105"
+              style={{ objectPosition: next.coverPosition }}
+            />
           </span>
         </div>
       </Link>

@@ -25,7 +25,12 @@ export function Home() {
               </span>
             ))}
           </h1>
-          <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.9, delay: 0.7, ease }} className="mt-10 border-t border-fg/15 pt-6">
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.9, delay: 0.7, ease }}
+            className="mt-10 border-t border-fg/15 pt-6"
+          >
             <p className="max-w-md text-pretty text-[17px] leading-relaxed text-muted sm:text-[19px]">{site.intro}</p>
           </motion.div>
         </div>
@@ -91,15 +96,19 @@ export function Home() {
             />
           </Reveal>
           <div className="flex flex-col justify-center">
-            <Lines
-              as="h2"
-              className="font-display text-balance text-[40px] sm:text-[56px] lg:text-[64px]"
-              lines={[' builder, side projects', 'on GitHub']} />
+            <Lines as="h2" className="font-display text-balance text-[40px] sm:text-[56px] lg:text-[64px]" lines={[' builder, side projects', 'on GitHub']} />
             <Reveal delay={0.2} className="mt-8 max-w-xl text-pretty text-[17px] leading-relaxed text-muted">
               <p>
-                I make side projects and small tools, usually in JavaScript and sometimes in Python. I keep the source public and move on when something is good enough to be real.
+                I make side projects and small tools, usually in JavaScript and sometimes in Python. I keep the source public and move on when something is good
+                enough to be real.
               </p>
-              <p className="mt-4">Most of what I have built so far lives on <a href="https://github.com/kebintong" className="link-draw inline" target="_blank" rel="noopener">GitHub</a>.</p>
+              <p className="mt-4">
+                Most of what I have built so far lives on{' '}
+                <a href="https://github.com/kebintong" className="link-draw inline" target="_blank" rel="noopener">
+                  GitHub
+                </a>
+                .
+              </p>
             </Reveal>
             <Reveal delay={0.3} className="mt-8">
               <Link to="/about" className="link-draw inline-flex items-center gap-1.5 text-[15px] font-medium">

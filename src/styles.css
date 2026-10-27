@@ -25,20 +25,36 @@
   --animate-drift-b: drift-b 26s ease-in-out infinite alternate;
   --animate-drift-c: drift-c 30s ease-in-out infinite alternate;
   @keyframes marquee {
-    from { transform: translateX(0); }
-    to { transform: translateX(-50%); }
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
   }
   @keyframes drift-a {
-    from { transform: translate3d(0, 0, 0) scale(1); }
-    to { transform: translate3d(-10%, 12%, 0) scale(1.12); }
+    from {
+      transform: translate3d(0, 0, 0) scale(1);
+    }
+    to {
+      transform: translate3d(-10%, 12%, 0) scale(1.12);
+    }
   }
   @keyframes drift-b {
-    from { transform: translate3d(0, 0, 0) scale(1.05); }
-    to { transform: translate3d(14%, -8%, 0) scale(0.95); }
+    from {
+      transform: translate3d(0, 0, 0) scale(1.05);
+    }
+    to {
+      transform: translate3d(14%, -8%, 0) scale(0.95);
+    }
   }
   @keyframes drift-c {
-    from { transform: translate3d(0, 6%, 0) scale(0.95); }
-    to { transform: translate3d(-8%, -10%, 0) scale(1.15); }
+    from {
+      transform: translate3d(0, 6%, 0) scale(0.95);
+    }
+    to {
+      transform: translate3d(-8%, -10%, 0) scale(1.15);
+    }
   }
 }
 
@@ -102,7 +118,9 @@
    scale; keep the tracking tight and the leading tighter. */
 @utility font-display {
   font-family: var(--font-display);
-  font-variation-settings: 'opsz' 96, 'wdth' 100;
+  font-variation-settings:
+    'opsz' 96,
+    'wdth' 100;
   font-weight: 500;
   letter-spacing: -0.035em;
   line-height: 0.95;
@@ -110,7 +128,9 @@
 
 @utility font-display-wide {
   font-family: var(--font-display);
-  font-variation-settings: 'opsz' 96, 'wdth' 112;
+  font-variation-settings:
+    'opsz' 96,
+    'wdth' 112;
   font-weight: 600;
   letter-spacing: -0.03em;
   line-height: 0.92;

@@ -1,11 +1,6 @@
-import { cloudflare } from '@cloudflare/vite-plugin'
 import tailwindcss from '@tailwindcss/vite'
 import react from '@vitejs/plugin-react'
 import { defineConfig, type Plugin } from 'vite'
-
-// `vite build --mode pages` builds a plain static site for
-// https://kebintong.github.io/portfolio/ (served under /portfolio/, no Worker).
-// Every other mode builds for Cloudflare Workers.
 
 /** GitHub Pages serves 404.html for unknown paths; make it the app shell so deep links work. */
 function spaFallback(): Plugin {
@@ -20,11 +15,10 @@ function spaFallback(): Plugin {
   }
 }
 
-export default defineConfig(({ mode }) => {
-  const pages = mode === 'pages'
-  return {
-    base: pages ? '/portfolio/' : '/',
-    plugins: pages ? [react(), tailwindcss(), spaFallback()] : [react(), tailwindcss(), cloudflare()],
-    server: { port: 5173, strictPort: false },
-  }
-})
+// The site is published at https://kebintong.github.io/portfolio/, so production
+// builds live under /portfolio/. The dev server stays at the root.
+export default defineConfig(({ command }) => ({
+  base: command === 'build' ? '/portfolio/' : '/',
+  plugins: [react(), tailwindcss(), spaFallback()],
+  server: { port: 5173, strictPort: false },
+}))

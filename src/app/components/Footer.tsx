@@ -2,7 +2,7 @@ import { ArrowUpRight } from 'lucide-react'
 
 import { site } from '../../data/site'
 import { Lines, Magnetic, Reveal } from './motion'
-import { useLocalTime } from './Nav'
+import { useLocalTime } from '../lib/useLocalTime'
 
 export function Footer() {
   const time = useLocalTime()
@@ -15,23 +15,22 @@ export function Footer() {
             <Lines as="h2" className="font-display text-[clamp(48px,8vw,120px)]" lines={['Get in touch']} />
             <Reveal delay={0.2} className="mt-8 flex flex-wrap items-center gap-x-8 gap-y-3">
               <Magnetic>
-                <a href={`mailto:${site.email}`} className="inline-flex h-14 items-center gap-2 rounded-[16px] bg-fg px-7 text-[16px] font-medium text-bg transition-colors hover:bg-[#2b2925]">
+                <a
+                  href={`mailto:${site.email}`}
+                  className="inline-flex h-14 items-center gap-2 rounded-[16px] bg-fg px-7 text-[16px] font-medium text-bg transition-colors hover:bg-[#2b2925]"
+                >
                   {site.email}
                   <ArrowUpRight className="size-4" />
                 </a>
               </Magnetic>
-              <p className="text-[14px] text-muted">
-                {site.available ? 'Open to side projects and collaborations' : 'Not taking on new work at the moment'}
-              </p>
+              <p className="text-[14px] text-muted">{site.available ? 'Open to side projects and collaborations' : 'Not taking on new work at the moment'}</p>
             </Reveal>
           </div>
 
           <Reveal delay={0.15}>
             <div className="flex h-full min-h-[320px] flex-col justify-center rounded-card bg-surface-2/60 p-8">
               <p className="font-display text-[clamp(22px,7vw,36px)] [overflow-wrap:anywhere]">{site.email}</p>
-              <p className="mt-2 text-[15px] text-muted">
-                Email me directly about a project, a collaboration, or just to say hi.
-              </p>
+              <p className="mt-2 text-[15px] text-muted">Email me directly about a project, a collaboration, or just to say hi.</p>
             </div>
           </Reveal>
         </div>
@@ -50,7 +49,9 @@ export function Footer() {
           <p className="text-faint sm:text-center">
             {site.location}, {time}
           </p>
-          <p className="text-faint sm:text-right">© {new Date().getFullYear()} {site.name}</p>
+          <p className="text-faint sm:text-right">
+            © {new Date().getFullYear()} {site.name}
+          </p>
         </div>
       </div>
     </footer>
