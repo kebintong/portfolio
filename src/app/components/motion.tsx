@@ -17,7 +17,12 @@ export function Lines({ lines, className, delay = 0, as: Tag = 'h1' }: { lines: 
     <Tag ref={ref} className={className}>
       {lines.map((line, i) => (
         <span key={i} className="block overflow-hidden pb-[0.08em] -mb-[0.08em]">
-          <motion.span className="block" initial={{ y: '110%' }} animate={inView ? { y: 0 } : { y: '110%' }} transition={{ duration: 1, delay: delay + i * 0.1, ease }}>
+          <motion.span
+            className="block"
+            initial={{ y: '110%' }}
+            animate={inView ? { y: 0 } : { y: '110%' }}
+            transition={{ duration: 1, delay: delay + i * 0.1, ease }}
+          >
             {line}
           </motion.span>
         </span>

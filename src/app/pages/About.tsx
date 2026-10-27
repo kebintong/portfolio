@@ -9,12 +9,7 @@ export function About() {
       <Lines as="h1" className="font-display text-balance text-[clamp(44px,7.5vw,112px)]" lines={['I build things,', 'open source']} />
       <div className="mt-14 grid gap-12 lg:grid-cols-[1fr_1.3fr] lg:gap-24">
         <Reveal>
-          <Parallax
-            src="https://avatars.githubusercontent.com/u/311342044?v=4"
-            alt={site.name}
-            className="aspect-[3/4] rounded-image"
-            strength={6}
-          />
+          <Parallax src="https://avatars.githubusercontent.com/u/311342044?v=4" alt={site.name} className="aspect-[3/4] rounded-image" strength={6} />
           <ul className="mt-6 flex flex-wrap gap-x-6 gap-y-2 text-[14px]">
             {site.socials.map((s) => (
               <li key={s.label}>
@@ -28,17 +23,14 @@ export function About() {
         </Reveal>
         <div>
           <Reveal className="text-pretty text-[19px] leading-relaxed sm:text-[22px]">
-            <p>
-              I am Kebin Tong. I build things on the web and around it, mostly as side projects, and I tend to keep them public on GitHub.
-            </p>
+            <p>I am Kebin Tong. I build things on the web and around it, mostly as side projects, and I tend to keep them public on GitHub.</p>
           </Reveal>
           <Reveal delay={0.1} className="mt-8 flex flex-col gap-5 text-[17px] leading-relaxed text-muted">
             <p>
-              Most of what I ship is small: a web app, a tool, a script that solves a problem I ran into myself. I like finishing things enough to put them online, then moving on to the next idea.
+              Most of what I ship is small: a web app, a tool, a script that solves a problem I ran into myself. I like finishing things enough to put them
+              online, then moving on to the next idea.
             </p>
-            <p>
-              When I am not at the keyboard, I am usually looking for the next project to start. My current work lives on GitHub.
-            </p>
+            <p>When I am not at the keyboard, I am usually looking for the next project to start. My current work lives on GitHub.</p>
           </Reveal>
 
           <Reveal delay={0.15} className="mt-16">
